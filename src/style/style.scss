@@ -1,0 +1,664 @@
+@import "_reset";
+$bg-color: #E5E5E5;
+$red: #C93E33;
+
+body{
+    background-color: $bg-color;
+    font-family: 'Fira Sans', sans-serif;
+}
+@mixin row-sb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+@mixin frow-gap($gap) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+@mixin col-sb($gap) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+    
+}
+
+@mixin text($fw, $fz, $lh, $ls){
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+.header {
+    @include text(300, 12px, 14px, 0.009em);
+
+    &__inner {
+        @include row-sb();
+        height: 46px;
+    }
+
+    &__nav {
+        @include frow-gap(15px)
+
+    }
+
+    &__link {
+        color: #000;
+    }
+
+    &__contacts {
+        @include frow-gap(32px);
+    }
+
+    &__cont {
+        @include frow-gap(12px);
+    }
+
+    &__phone {
+        @include text(700, 16px, 19px, 1px);
+    }
+    &__location{
+        color: $red;
+        font-weight: 400;
+    }
+
+    &__main {
+        height: 110px;
+        background-color: #fff;
+        @include frow-gap(0);
+    }
+
+    &__name {
+        width: 112px;
+        @include text(400, 12px, 12px, 0.009em);
+    }
+
+    &__favour {
+        @include col-sb(6px);
+    }
+    &__breadcrumbs{
+        @include frow-gap(10px);
+        justify-content: flex-start;
+        padding-top: 17px;
+    }
+    &__breadcrumb-active{
+        font-weight: 500;
+        color: #000;
+    }
+}
+.btn{
+    width: 145px;
+    height: 42px;
+    background: $red;
+    border-radius: 4px;
+    @include frow-gap(17px);
+    color: #fff;
+    @include text(500, 15px, 18px, 0.009em);
+}
+
+.search {
+    position: relative;
+    &__icon {
+        position: absolute;
+        left: 17px;
+        top: 13px;
+    }
+
+    &__enter {
+        position: absolute;
+        top: 13px;
+        right: 17px;
+    }
+
+    &__input{
+        width: 546px;
+        height: 42px;
+        border: 1px solid #E6E6E6;
+        border-radius: 4px;
+        padding-left: 20px;
+    }
+}
+
+.container {
+    width: 1130px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.head {
+    @include row-sb();
+    padding-top: 13px;
+    padding-bottom: 30px;
+
+    &__name {
+        @include frow-gap(20px);
+        @include text(500, 30px, 36px, 1px);
+        color: #000000;
+    }
+
+    &__left-arrow {
+        @include frow-gap(0);
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: #fff;
+
+    }
+
+    &__filter {
+        @include frow-gap(31px);
+    }
+
+    &__intrested {
+        @include frow-gap(6px);
+    }
+
+    &__icon {
+        position: relative;
+    }
+
+    &__round {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background: #C93E33;
+        border-radius: 50%;
+        top: -2px;
+        left: -2px;
+        @include frow-gap(0);
+    }
+
+    &__list {
+        @include frow-gap(0);
+        justify-content: flex-start;
+        width: 43px;
+        height: 18px;
+        background: #FFFFFF;
+        border-radius: 50px;
+        padding-left: 26px;
+    }
+}
+
+$border: 0.5px solid #E6E6E6;
+
+.shop{
+    &__inner{
+        background: #FFFFFF;
+        @include frow-gap(0);
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    &__filter {
+        width: 269px;
+    }
+    &__cards{
+        width: 840px;
+    }
+    &__header{
+        width: 100%;
+        @include frow-gap(0);
+
+    }
+    &__item{
+        border: $border;
+    }
+    
+    &__gost{
+        cursor: pointer;
+        background-color: #F9F9F9;
+        padding: 6px 9px 5px 9px;
+        border-radius: 4px;
+        @include text(400, 12px, 14px, 00.009em)
+    }
+    &__gost-active{
+        background-color: $red;
+        color: #fff;
+    }
+    &__list{
+        @include frow-gap(0);
+        flex-wrap:wrap;
+        justify-content: flex-start;
+    }
+
+}
+
+.drop-list{
+    justify-content: space-between;
+    width: 100%;
+}
+.gost{
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 18.5px 15px;
+}
+.filter{
+    padding: 20px;
+    &__header{
+        @include frow-gap(12px);
+        @include text(500, 18px, 22px, 0.009em);
+        color: #000000;
+    }
+    &__btn{
+        width: 229px;
+        height: 47px;
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        border-radius: 4px;
+        @include text(400, 15px, 18px, 0.009em);
+        color: #B3B3B3;
+        margin: 20px 0;
+    }
+    &__choose{
+        @include text(400, 15px, 18px, 0.009em);
+        color: #B3B3B3;
+    }
+    &__choosen{
+        @include text(400, 15px, 18px, 0.009em);
+    }
+    &__inner{
+        @include col-sb(20px);
+        align-items: flex-start;
+    }
+    &__items{
+        @include col-sb(10px);
+        align-items: flex-start;
+    }
+    &__item{
+        cursor: pointer;
+        @include text(400, 12px, 14px, 0.009em);
+        max-width: 211px;
+    }
+    &__item-active{
+        background-color: $bg-color ;
+    }
+
+    &__series{
+        color: #B3B3B3;
+    }
+    &__more{
+        color: $red;
+        @include frow-gap(7.5px);
+        @include text(400, 12px, 14px, 00.009em)
+    }
+    &__num{
+        @include text(400, 8px, 10px, 0.009em);
+        color: #EFEFEF;
+        padding: 2px 4px;
+        background: #C93E33;
+        border-radius: 50px;
+    }
+}
+@mixin plus {
+    border-radius: 50px;
+    padding: 5px 0;
+    @include text(400, 10px, 12px, 0.009em);
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    width: 5.5em;
+}
+.card {
+    position: relative;
+    width: 280px;
+    height: 420px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    &__inner{
+        width: 280px;
+        border: $border;
+        padding: 20px;
+        padding-top: 50px;
+        @include col-sb(34px);
+        background-color: #fff;
+    }
+    &__cont{
+        width: 100%;
+    }
+    &__img{
+        width: 179px;
+        height: 196px;
+    }
+    &__gost{
+        padding: 4px 0;
+        width: 83px;
+        background: rgb(201, 62, 51, 0.1);
+        border-radius: 2px;
+        @include text(400, 10px, 12px, 00.009em);
+        text-align: center;
+        color: #C93E33;
+    }
+    &__name{
+        margin-top: 25px;
+        margin-bottom: 37px;
+        @include text(400, 18px, 22px, 00.009em);
+        height: 18px;
+    }
+    &__price{
+        @include text(700, 15px, 18px, 00.009em)
+    }
+    &__btns{
+        
+        @include col-sb(15px);
+        display: none;
+        align-items: stretch;
+        width: 100%;
+    }
+    &__btn{
+        @include frow-gap(16px);
+        @include text(400, 15px, 18px, 00.009em);
+        width: 240px;
+        height: 42px;
+        background: #EFEFEF;
+        border-radius: 4px;
+    }
+    &__btn:hover{
+        background: $red;
+        color: #fff;
+    }
+    &__btn:hover &__btn-icon{
+        fill: #fff;
+    }
+    &__btn-icon{
+        fill: #000;
+    }
+    &__best{
+        position: absolute;
+        @include frow-gap(5px);
+        display: none;
+        color: #B3B3B3;
+        top: 15px;
+        right: 15px;
+        @include text(400, 12px, 14px, 00.009em)
+    }
+    &__plus{
+        @include col-sb(15px);
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    &__hit{
+        @include plus();
+        background: #FD7272;
+    }
+    &__action{
+        @include plus();
+        background: #27AE60;
+    }
+    &__price-col{
+        @include row-sb();
+    }
+    &__col {
+        @include row-sb();
+        display: none;
+        width: 108px;
+        border: 1px solid #E6E6E6;
+        border-radius: 2px;
+    }
+    &__colplus {
+        padding: 9px;
+    }
+    &__colnum {
+        border-left: 1px solid #E6E6E6;
+        border-right: 1px solid #E6E6E6;
+        border-radius: 2px;
+        width: 100%;
+        line-height: 34px;
+        text-align: center;
+    }
+}
+.card:hover .card__best{
+   display: flex;
+}
+.card:hover .card__col{
+    display: flex;
+ }
+.card:hover .card__btns{
+    display: flex;
+ }
+.card:hover .card__inner{
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 12px 12px 4px rgba(0, 0, 0, 0.1);
+}
+.shop-footer{
+    @include row-sb();
+    padding-top: 25px;
+    padding-left: 270px;
+    @include text(400, 17px, 20px, 0.009em);
+    text-align: center;
+    &__nums{
+        @include frow-gap(15px);
+    }
+    &__num{
+        background: #FFFFFF;
+        border-radius: 50%;
+        line-height: 20px;
+        width: 20px;
+        
+    }
+    &__pages {
+        @include frow-gap(0);
+    }
+    &__page {
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        border-radius: 2px;
+        width: 36px;
+        line-height: 36px;
+        color: #B3B3B3;
+        font-size: 12px;
+    }
+    &__page-select {
+        color: #000;
+    }
+    &__more{
+        color: #C93E33;
+        @include text(400, 15px, 18px, 0.009em)
+    }
+}
+.description {
+    padding: 40px 0;
+    @include col-sb(20px);
+    align-items: flex-start;
+    @include text(400, 15px, 18px, 0.009em);
+    &__title{
+        @include text(700, 18px, 22px, 0.009em);
+    }
+    &__more {
+        color: $red;
+        @include frow-gap(5px);
+    }
+}
+.form {
+    width: 100%;
+    @include col-sb(20px);
+    padding: 50px 80px;
+    &__input{
+        border: 1px solid #E6E6E6;
+        border-radius: 4px;
+        padding: 8px 20px;
+        width: 500px;
+
+    }
+}
+.footer{
+    margin-top: 67px;
+    position: relative;
+    padding: 0 auto;
+    padding-top: 83px;
+    background-color: #222628;
+    width: 100%;
+    &__img{
+        margin-left: -40px;
+    }
+    &__form{
+        position: absolute;
+        top: -67px;
+    }
+}
+.cart{
+    z-index: 1;
+    position: absolute;
+    top: -9px;
+    right: -12px;
+    background: #FFFFFF;
+    box-shadow: 0px 12px 12px 4px rgba(0, 0, 0, 0.05);
+    width: 232px;
+    @include text(300, 12px, 14px, 00.009em);
+    &__total{
+        color: $red;
+    }
+    &__price{
+        color: #B3B3B3;
+    }
+    &__btn{
+        @include frow-gap(0);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.009em;
+        color: #FFFFFF;
+        width: 202px;
+        height: 35px;
+        background: #C93E33;
+        border-radius: 4px;
+    }
+    &__footer{
+        padding: 16px 15px 35px 15px;
+        @include col-sb(15px);
+    }
+    &__offer{
+        @include row-sb();
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.009em;
+
+        color: #C93E33;
+    }
+    &__item{
+        padding: 11px 15px;
+        border-bottom: 1px solid #E6E6E6;
+        @include row-sb();
+        gap: 5px;
+    }
+    &__img{
+        width: 22px;
+        height: 22px;
+        position: relative;
+    }
+    &__num{
+        position: absolute;
+        text-align: center;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 11px;
+        width: 15px;
+        background-color: $red;
+        color: #EFEFEF;
+        border-radius: 50%;
+        top: -5px;
+        right: -3px;
+        border: 2px solid  #fff;
+    }
+}
+.customer{
+    position: relative;
+    width: 280px;
+    background-color: #fff;
+    &__close{
+        @include text(500, 18px, 18px, 1px);
+        border: 1px solid #7a7a7a;
+        border-radius: 50%;
+        color:#7a7a7a;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        padding-left: 4px;
+        padding-top: 0px;
+        padding-right: 2px;
+        padding-bottom: 1px;
+        text-align: center;
+    }
+    &__header{
+        padding: 18px 20px;
+        @include text(500, 18px, 22px, 1px);
+        border-bottom:  $border;
+    }
+    &__inner {
+        padding: 18px 20px;
+        @include col-sb(40px);
+        align-items: flex-start;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.009em;
+        color: #B3B3B3;
+    }
+    &__form{
+        @include col-sb(16px);
+        width: 100%;
+    }
+    &__item {
+        padding: 8px;
+        display: flex;
+        gap:12px;
+        border-bottom: $border;
+        width: 100%;
+    }
+    &__footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+    }
+    &__total {
+        @include row-sb();
+        @include text(500, 18px, 22px, 1px);
+        color: $red;
+    }
+    &__total-txt {
+        color: black;
+    }
+    &__btn{
+        background: #FFFFFF;
+        border: 1px solid #C93E33;
+        border-radius: 4px;
+        color: #C93E33;
+        padding: 12px 26px;
+        @include frow-gap(22px);
+        justify-content: flex-start;
+        @include text(500, 15px, 18px, 0.009em);
+    }
+    &__btn:hover{
+        background: #C93E33;
+        color: #ffffff;
+    }
+    &__btn:hover &__btnsvg{
+        fill:#EFEFEF;
+        stroke: #EFEFEF;
+    }
+}
+.m {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top:0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
