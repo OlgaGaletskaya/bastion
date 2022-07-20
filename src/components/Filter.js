@@ -25,7 +25,7 @@ const Filter = observer(() => {
                 </svg>
             </div>
             <div>
-            <input type="range"/>
+            
             </div>
         </div>
         <div className='shop__item filter'>
