@@ -1,0 +1,13 @@
+{
+  "main.css": "/bastion/static/css/main.d99c481f.chunk.css",
+  "main.js": "/bastion/static/js/main.a4683440.chunk.js",
+  "main.js.map": "/bastion/static/js/main.a4683440.chunk.js.map",
+  "static/js/1.f6ea00d0.chunk.js": "/bastion/static/js/1.f6ea00d0.chunk.js",
+  "static/js/1.f6ea00d0.chunk.js.map": "/bastion/static/js/1.f6ea00d0.chunk.js.map",
+  "runtime~main.js": "/bastion/static/js/runtime~main.d61865bd.js",
+  "runtime~main.js.map": "/bastion/static/js/runtime~main.d61865bd.js.map",
+  "static/css/main.d99c481f.chunk.css.map": "/bastion/static/css/main.d99c481f.chunk.css.map",
+  "index.html": "/bastion/index.html",
+  "precache-manifest.b41b4fddefa134a38b0319a4697420c9.js": "/bastion/precache-manifest.b41b4fddefa134a38b0319a4697420c9.js",
+  "service-worker.js": "/bastion/service-worker.js"
+}
